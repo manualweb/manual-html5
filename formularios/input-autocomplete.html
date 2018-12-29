@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Autocomplete</title>
+
+</head>
+<body>
+
+<h1>Autocomplete</h1>
+<p>Atributo para autocompletar los campos.</p>
+
+<form action="#">
+  <label for="nombre">Nombre: </label>
+  <input type="text" name="nombre" id="nombre" autocomplete="name"> (Ofrecerá nombres)<br/>
+    <label for="url">URL: </label>
+  <input type="text" name="url" id="url" autocomplete="off">(Deshabilitado el Autocomplete)<br/>
+    <label for="direccion">Dirección: </label>
+  <input type="text" name="direccion" id="direccion" autocomplete="street-address"> (Ofrecerá Direcciones)<br/>
+  <input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>
