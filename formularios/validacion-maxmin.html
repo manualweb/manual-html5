@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Validación: Tamaño Mínimo y Máximo</title>
+
+</head>
+<body>
+
+<h1>Validación: Tamaño Mínimo y Máximo</h1>
+<p>Valida el tamaño mínimo y máximo de un campo.</p>
+
+<form action="#">
+  <label for="pwd">Inserta una password:</label>
+  <input type="password" name="pwd" id="pwd" minlength="8" required/>
+  <br/>
+  <label for="descripcion">Describete:</label>
+  <textarea id="descripcion" minlength="10" maxlength="50" required></textarea>
+
+
+  <input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>

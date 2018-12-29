@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Validación: Mensajes Personalizados</title>
+
+</head>
+<body>
+
+<h1>Validación: Mensajes Personalizados</h1>
+<p>Personaliza el mensaje de validación.</p>
+
+<form action="#">
+  <label for="email">¿Cuál es tu email?:</label>
+  <input type="email" name="email" id="email" required/>
+  <input type="submit" value="Enviar">
+</form>
+
+<script>
+var email = document.getElementById("email");
+
+email.addEventListener("input", function (event) {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("Para poder enviar el formulario debes dejarnos un email.");
+  } else {
+    email.setCustomValidity("");
+  }
+});
+</script>
+
+</body>
+</html>

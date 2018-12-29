@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Validación: Mensajes Personalizados</title>
+
+</head>
+<body>
+
+<h1>Validación: Mensajes Personalizados</h1>
+<p>Personaliza el mensaje de validación.</p>
+
+
+<form id="webform" action="#">
+  <label for="email">¿Cuál es tu email?:</label>
+  <input type="email" name="email" id="email" required/><br/>
+  <label for="website">¿Cuál es tu website?:</label>
+  <input type="url" name="website" id="website" required/><br/>
+  <label for="visitantes">Número de visitantes:</label>
+  <input type="number" name="visitantes" id="visitantes"><br/>
+  <input type="submit" value="Enviar">
+</form>
+
+<script>
+var email = document.getElementById("email");
+
+email.addEventListener("input", function (event) {
+
+  if (!email.checkValidity()) {
+    console.log("Problemas");
+  }
+
+  if (email.validity.typeMismatch) {
+    // Muestra el mensaje que saca por defecto el navegador
+    console.log(email.validationMessage);
+    console.log(email.willValidate);
+    email.setCustomValidity("Para poder enviar el formulario debes dejarnos un email.");
+  } else {
+    email.setCustomValidity("");
+  }
+});
+
+var webform = document.getElementById("webform");
+
+webform.onchange = function(event) {
+  if (webform.reportValidity()){
+    console.log("Todos los campos del formulario están validados correctamente.");
+  } else {
+    console.log("Hay campos del formulario con problemas de validación.");
+  }
+}
+
+
+
+</script>
+
+</body>
+</html>
