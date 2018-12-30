@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Offline</title>
+
+</head>
+<body>
+
+<h1>Offline</h1>
+
+<p>Controlar si el usuario está online u offline.</p>
+<p>Puedes pulsar F12 y desde la herramienta de desarrolladores forzar offline</p>
+<span id="estado"></span>
+
+<script>
+
+var estado = document.getElementById("estado");
+
+function mode() {
+  if (navigator.onLine) {
+    estado.innerHTML = "El usuario está online";
+  } else {
+    estado.innerHTML = "El usuario está offline";
+  }
+}
+
+mode();
+
+window.addEventListener("online", function(e){
+  mode();
+},false);
+
+window.addEventListener("offline", function(e){
+  mode();
+},false);
+
+
+</script>
+
+</body>
+</html>
