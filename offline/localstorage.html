@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Localstorage</title>
+
+</head>
+<body>
+
+<h1>Localstorage</h1>
+
+<p>Manejo del localstorage. Utiliza la consola Javascript para ver el resultado.</p>
+
+
+<script>
+
+// Guardamos la variable color y ancho
+localStorage.setItem("color","rojo");
+localStorage.setItem("ancho",12);
+
+// Recuperamos la variable color y ancho
+console.log(localStorage.getItem("color"));
+console.log(localStorage.getItem("ancho"));
+
+// Recupera las variables y su valor
+for (var x=0; x<localStorage.length;x++) {
+  console.log(localStorage.key(x) + "=" + localStorage.getItem(localStorage.key(x)));
+}
+
+// Eliminarmos la variable color
+localStorage.removeItem("color");
+console.log(localStorage.getItem("color"));
+console.log(localStorage.getItem("ancho"));
+
+// Borramos la caché
+localStorage.clear();
+// Intentamos recuperar la variable ancho nuevamente
+console.log(localStorage.getItem("ancho"));
+
+</script>
+
+</body>
+</html>
