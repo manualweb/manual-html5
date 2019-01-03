@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>SessionStorage</title>
+
+</head>
+<body>
+
+<h1>SessionStorage</h1>
+
+<p>Manejo del SessionStorage. Utiliza la consola Javascript para ver el resultado.</p>
+
+
+<script>
+
+// Recuperamos la variable color y ancho, por si estaban
+console.log(sessionStorage.getItem("color"));
+console.log(sessionStorage.getItem("ancho"));
+
+// Guardamos la variable color y ancho
+sessionStorage.setItem("color","rojo");
+sessionStorage.setItem("ancho",12);
+
+// Recuperamos la variable color y ancho
+console.log(sessionStorage.getItem("color"));
+console.log(sessionStorage.getItem("ancho"));
+
+// Recupera las variables y su valor
+for (var x=0; x<sessionStorage.length;x++) {
+  console.log(sessionStorage.key(x) + "=" + sessionStorage.getItem(sessionStorage.key(x)));
+}
+
+// Eliminarmos la variable color
+sessionStorage.removeItem("color");
+console.log(sessionStorage.getItem("color"));
+console.log(sessionStorage.getItem("ancho"));
+
+// Borramos la caché
+sessionStorage.clear();
+// Intentamos recuperar la variable ancho nuevamente
+console.log(sessionStorage.getItem("ancho"));
+
+// Guardamos la variable color y ancho para el futuro
+sessionStorage.setItem("color","rojo");
+sessionStorage.setItem("ancho",12);
+
+</script>
+
+</body>
+</html>
