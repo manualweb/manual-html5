@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mi Primer Canvas</title>
+
+</head>
+<body>
+
+<h1>Mi Primer Canvasr</h1>
+
+<canvas id="lienzo" width="300" height="300"></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+  ctx.fillRect(10, 10, 200, 100);
+}
+</script>
+
+
+</body>
+</html>
