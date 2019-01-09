@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Línea en Canvas</title>
+
+</head>
+<body>
+
+<h1>Línea en Canvas</h1>
+<p>Dibujamos una línea en un Canvas</p>
+
+<canvas id="lienzo" width="600" height="600"></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+
+  ctx.beginPath();
+  ctx.moveTo(10,10);
+  ctx.lineTo(10,100);
+  ctx.stroke();
+}
+
+</script>
+
+</body>
+</html>
