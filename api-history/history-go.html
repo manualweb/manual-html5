@@ -11,17 +11,35 @@
 
 <article>
   <p>Ejemplo para manipular el History API</p>
-  <p>Visualiza en la consola del navegador el efeecto (F12)</p>
-</article>
+  <button id="adelante">Adelante 2</button>
+  <button id="atras">Atrás 2</button>
+  <span id="salida"></div>
 
+</article>
 
 
 <script>
 
+  var salida = document.getElementById("salida");
+
+  function escribir(texto) {
+    salida.innerHTML = texto;
+  }
+
   window.onpopstate = function(event) {
-      console.log("Entro");
-      console.log("Estado: " + JSON.stringify(event.state));
+      escribir("Estado: " + JSON.stringify(event.state));
   };
+
+  var fwd = document.getElementById("adelante");
+  fwd.addEventListener("click",function (e){
+    history.go(2);
+  },false);
+
+  var bwd = document.getElementById("atras");
+  bwd.addEventListener("click",function (e){
+    history.go(-2);
+  },false);
+
 
 
   // Vamos a crear estados en el historial
@@ -33,14 +51,11 @@
   history.pushState({ pagina: "5" }, "Titulo 5", "history-go.html#p5");
   history.pushState({ pagina: "6" }, "Titulo 6", "history-go.html#p6");
   history.pushState({ pagina: "7" }, "Titulo 7", "history-go.html#p7");
-
+  history.pushState({ pagina: "8" }, "Titulo 8", "history-go.html#p8");
 
   console.log("El número de estados es de " + history.length);
 
-  // Empezamos a movernos
-  window.history.go(-2);
-  window.history.go(1);
-  window.history.go(-2);
+  escribir("Estado: " + JSON.stringify(history.state));
 
 </script>
 
