@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Canvas MoveTo</title>
+
+</head>
+<body>
+
+<h1>Canvas MoveTo</h1>
+<p>Movemos el puntero del canvas para generar dos líneas paralelas.</p>
+
+<canvas id="lienzo" width="600" height="600"></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+
+  ctx.beginPath();
+  ctx.moveTo(10,10);
+  ctx.lineTo(10,100);
+  ctx.moveTo(20,10);
+  ctx.lineTo(20,100);
+  ctx.lineTo(40,100);
+  ctx.fill();
+
+  ctx.stroke();
+
+
+
+}
+
+</script>
+
+</body>
+</html>
