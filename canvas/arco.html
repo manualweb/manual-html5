@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Arco en Canvas</title>
+
+</head>
+<body>
+
+<h1>Arco en Canvas</h1>
+<p>Dibujamos un arco en un Canvas</p>
+
+<canvas id="lienzo" width="600" height="600"></canvas>
+
+<script type="text/javascript">
+
+function radianes(grados){
+  return grados * (Math.PI/180);
+}
+
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+
+  ctx.arc(100,100,50,0,radianes(90),true);
+  ctx.stroke();
+
+}
+
+</script>
+
+</body>
+</html>
