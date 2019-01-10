@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>ArcTo en Canvas</title>
+
+</head>
+<body>
+
+<h1>Arco en Canvas</h1>
+<p>Dibujamos un arco en un Canvas</p>
+
+<canvas id="lienzo" width="600" height="600"></canvas>
+
+<script type="text/javascript">
+
+function radianes(grados){
+  return grados * (Math.PI/180);
+}
+
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+
+  // Redondear esquina rectángulo
+  ctx.moveTo(10,10);
+  ctx.arcTo(100,10, 100,100, 40);
+  ctx.stroke();
+
+  // Arco grande sobre tangentes
+  ctx.beginPath();
+  ctx.moveTo(200,200);
+  ctx.arcTo(250,100,300,200,140);
+  ctx.stroke();
+
+}
+
+</script>
+
+</body>
+</html>
