@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>ArcTo en Canvas Explicado</title>
+
+</head>
+<body>
+
+<h1>ArcTo en Canvas Explicado</h1>
+<p>Explica cómo funciona el <code>arcTo</code> basado en la explicación de <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arcTo">MDN</a></p>
+
+<canvas id="canvas" width="600" height="600"></canvas>
+
+<script type="text/javascript">
+
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+// Tangential lines
+ctx.beginPath();
+ctx.strokeStyle = 'gray';
+ctx.moveTo(200, 20);
+ctx.lineTo(200, 170);
+ctx.lineTo(50, 60);
+ctx.stroke();
+
+// Arc
+ctx.beginPath();
+ctx.strokeStyle = 'black';
+ctx.lineWidth = 5;
+ctx.moveTo(200, 20);
+ctx.arcTo(200,170, 50,60, 40);
+ctx.stroke();
+
+// Start point
+ctx.beginPath();
+ctx.fillStyle = 'blue';
+ctx.arc(200, 20, 5, 0, 2 * Math.PI);
+ctx.fill();
+
+// Control points
+ctx.beginPath();
+ctx.fillStyle = 'red';
+ctx.arc(200, 170, 5, 0, 2 * Math.PI); // Control point one
+ctx.arc(50, 60, 5, 0, 2 * Math.PI);   // Control point two
+ctx.fill();
+
+
+// Circle
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.strokeStyle = 'gray';
+ctx.setLineDash([5]);
+ctx.arc(160, 90, 40, 0, 2 * Math.PI);
+ctx.stroke();
+
+</script>
+
+</body>
+</html>
