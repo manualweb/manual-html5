@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Canvas Smile</title>
+
+</head>
+<body>
+
+<h1>Canvas Smile</h1>
+
+<canvas id="lienzo" width="600" height="600"></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+
+  ctx.beginPath();
+  ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Cara
+  ctx.moveTo(110, 75);
+  ctx.arc(75, 75, 35, 0, Math.PI, false);  // Boca
+  ctx.moveTo(65, 65);
+  ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Ojo izquierdo
+  ctx.moveTo(95, 65);
+  ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Ojo derecho
+  ctx.stroke();
+
+
+}
+
+</script>
+
+</body>
+</html>
