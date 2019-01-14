@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Rectángulo esquinas redondeadas</title>
+
+</head>
+<body>
+
+<h1>Rectángulo esquinas redondeadas</h1>
+
+<canvas id="lienzo" width="600" height="600"></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+
+  var roundedRect=function(ctx,x,y,width,height,radius)
+  {
+      ctx.save();	// save the context so we don't mess up others
+      ctx.beginPath();
+
+      // draw top and top right corner
+      ctx.moveTo(x+radius,y);
+      ctx.arcTo(x+width,y,x+width,y+radius,radius);
+
+      // draw right side and bottom right corner
+      ctx.arcTo(x+width,y+height,x+width-radius,y+height,radius);
+
+      // draw bottom and bottom left corner
+      ctx.arcTo(x,y+height,x,y+height-radius,radius);
+
+      // draw left and top left corner
+      ctx.arcTo(x,y,x+radius,y,radius);
+
+
+  	ctx.stroke();
+
+      ctx.restore();	// restore context to what it was on entry
+  }
+
+  roundedRect(ctx,95,95,200,150,40,false,true);
+
+
+
+}
+
+</script>
+
+</body>
+</html>
