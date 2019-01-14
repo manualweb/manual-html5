@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Path 2D SVG</title>
+
+</head>
+<body>
+
+<h1>Path 2D SVG</h1>
+
+<canvas id="lienzo" width="600" height="600"></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'blue';
+
+  // Cuadrado
+  var pathsvg = new Path2D('M10 10 h 80 v 80 h -80 Z');
+  ctx.fill(pathsvg);
+
+  // triangulo
+  var pathsvg2 = new Path2D('M100 10 l 80 80 h -80 Z');
+  ctx.fill(pathsvg2);
+
+}
+
+</script>
+
+</body>
+</html>
