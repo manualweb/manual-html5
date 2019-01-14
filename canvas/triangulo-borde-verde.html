@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Triangulos</title>
+
+</head>
+<body>
+
+<h1>Triangulos</h1>
+
+<canvas id="lienzo" width="600" height="600"></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+
+  ctx.beginPath();
+  ctx.moveTo(50, 50);
+  ctx.lineTo(100, 100);
+  ctx.lineTo(50, 100);
+  ctx.lineTo(50, 50);
+  ctx.strokeStyle = 'green';
+  ctx.stroke();
+
+
+}
+
+</script>
+
+</body>
+</html>

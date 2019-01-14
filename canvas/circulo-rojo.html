@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Círculo Relleno Rojo en Canvas</title>
+</head>
+<body>
+
+<h1>Círculo Relleno Rojo en Canvas</h1>
+<p>Dibujamos un arco en un Canvas</p>
+
+<canvas id="lienzo" width="600" height="600"></canvas>
+
+<script type="text/javascript">
+
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+
+  ctx.beginPath();
+  ctx.arc(100,100,50,0,2*Math.PI);
+  ctx.fillStyle = 'red';
+  ctx.fill();
+
+}
+
+</script>
+
+</body>
+</html>
