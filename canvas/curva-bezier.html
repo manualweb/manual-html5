@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Curva Bézier</title>
+
+</head>
+<body>
+
+<h1>Curva Bézier</h1>
+
+<canvas id="lienzo" width="600" height="600"></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+
+  ctx.beginPath();
+  ctx.moveTo(75, 25);
+  ctx.quadraticCurveTo(25, 25, 25, 62.5);
+  ctx.quadraticCurveTo(25, 100, 50, 100);
+  ctx.quadraticCurveTo(50, 120, 30, 125);
+  ctx.quadraticCurveTo(60, 120, 65, 100);
+  ctx.quadraticCurveTo(125, 100, 125, 62.5);
+  ctx.quadraticCurveTo(125, 25, 75, 25);
+  ctx.stroke();
+
+
+}
+
+</script>
+
+</body>
+</html>
