@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Línea Redondeada</title>
+
+</head>
+<body>
+
+<h1>Línea Redondeada</h1>
+
+<canvas id="lienzo" width="600" height="600"></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+
+  ctx.lineCap = 'round';
+  ctx.lineWidth = 20;
+  ctx.moveTo(50,50);
+  ctx.lineTo(50,150);
+  ctx.stroke();
+
+}
+
+</script>
+
+</body>
+</html>
