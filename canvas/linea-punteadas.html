@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Línea en Canvas</title>
+
+</head>
+<body>
+
+<h1>Línea en Canvas</h1>
+<p>Dibujamos un rectángulo dentro del Canvas</p>
+
+<canvas id="lienzo" width="600" height="600"></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+  ctx.lineDashOffset = 2;
+  ctx.setLineDash([4,2]);
+  ctx.strokeStyle = 'green';
+  ctx.strokeRect(10, 10, 200, 100);
+}
+</script>
+
+</body>
+</html>
