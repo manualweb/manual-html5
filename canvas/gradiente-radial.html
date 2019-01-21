@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Gradiente Radial</title>
+
+</head>
+<body>
+
+<h1>Gradiente Radial</h1>
+
+<canvas id="lienzo" width="600" height="600"></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+
+
+  var rg1 = ctx.createRadialGradient(45, 45, 10, 52, 50, 30);
+  rg1.addColorStop(0, '#A7D30C');
+  rg1.addColorStop(0.9, '#019F62');
+  rg1.addColorStop(1, 'rgba(1, 159, 98, 0)');
+
+  var rg2 = ctx.createRadialGradient(105, 105, 20, 112, 120, 50);
+  rg2.addColorStop(0, '#FF5F98');
+  rg2.addColorStop(0.75, '#FF0188');
+  rg2.addColorStop(1, 'rgba(255, 1, 136, 0)');
+
+  ctx.fillStyle = rg1;
+  ctx.fillRect(0, 0, 300, 300);
+
+  ctx.fillStyle = rg2;
+  ctx.fillRect(0, 0, 300, 300);
+
+
+}
+</script>
+
+</body>
+</html>
