@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Texto sin Relleno en Canvas</title>
+
+</head>
+<body>
+
+<h1>Texto sin Relleno en Canvas</h1>
+
+<canvas id="lienzo" width="600" height="300"></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+  ctx.font = '48px serif';
+  ctx.strokeText("Esto es texto en un Canvas",10,50);
+}
+</script>
+
+</body>
+</html>
