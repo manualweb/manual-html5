@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Texto alineado a la derecha en Canvas</title>
+
+</head>
+<body>
+
+<h1>Texto en Canvas</h1>
+
+<canvas id="lienzo" width="600" height="300"></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById('lienzo');
+if (canvas.getContext) {
+  var ctx = canvas.getContext('2d');
+  ctx.font = '24px serif';
+  ctx.textAlign = 'right';
+  ctx.fillText("Esto es texto en un Canvas",400,50);
+}
+</script>
+
+</body>
+</html>
