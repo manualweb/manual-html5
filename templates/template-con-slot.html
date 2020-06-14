@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Plantilla con Slots
+        </title>
+    </head>
+    <body>
+        <h1>Plantilla con Slots</h1>
+
+        <template id="mi-plantilla">
+            <h2>Plantilla</h2>
+            <p>Hola, <slot name="nombre">$nombre</slot>. Esta es mi primera plantila con slot.</p>
+            <slot name="atributos"><ul><li>Atributo</li></ul></slot>
+        </template>
+
+        <script>
+            
+            // Definimos un elemento vía la plantilla
+            customElements.define('mi-saludo',
+                class extends HTMLElement {
+                    constructor() {
+                        super();
+                        var template = document
+                            .getElementById('mi-plantilla')
+                            .content;
+                    const shadowRoot = this.attachShadow({mode: 'open'})
+                        .appendChild(template.cloneNode(true));
+                    }
+                }
+            );
+
+        </script>  
+        
+        <mi-saludo>
+            <span slot="nombre">Luis</span>
+            <ul slot="atributos">
+                <li>Inteligente</li>
+                <li>Guapo</li>
+                <li>Atrevido</li>
+            </ul>
+        </mi-saludo>
+
+    </body>
+</html>
