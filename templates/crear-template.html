@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Crear una plantilla en HTML5
+        </title>
+    </head>
+    <body>
+        <h1>Crear una plantilla en HTML5</h1>
+
+        <template id="mi-plantilla">
+            <p>Hola, esto es mi plantilla.</p>
+        </template>
+
+        <script>
+            // Código que añade la plantilla en la página
+            let template = document.getElementById('mi-plantilla');            
+            document.body.appendChild(template.content);
+        </script>            
+
+    </body>
+</html>
